@@ -12,35 +12,7 @@
     frameborder="0"></iframe>
   <input id="seekNumber" type="number">
   <button onclick="seek()">Seek To</button>
-  <script type="text/javascript">
-    var player = new Vimeo.Player('player_1');
-    player.ready().then(function () {
-      console.log("Player Loaded");
-    });
-    player.on('play', playEvent);
-
-    player.on('pause', pauseEvent);
-
-    player.on('ended', endEvent);
-
-    function pauseEvent () {
-      console.log('Video Paused');
-    }
-    function playEvent () {
-      console.log('Video Played');
-    }
-    function endEvent () {
-      console.log('Video Ended');
-    }
-
-    seek = function () {
-      var duration = document.getElementById('seekNumber');
-      console.log("Seek To" + duration.value);
-      player.setCurrentTime(duration.value).catch(function () {
-        console.log('Seeked');
-      });
-    }
-  </script>
+  <script src="script.js" charset="utf-8"></script>
 </body>
 
 </html>
